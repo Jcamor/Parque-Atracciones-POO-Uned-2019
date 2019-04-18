@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=dni\ nombre\ edad\ alturaCm\ fechaEntrada\ diversidadFuncional\ dniAdultoacompania
+comment0.target=Nino(java.lang.String,\ java.lang.String,\ int,\ int,\ java.lang.String,\ boolean,\ java.lang.String)
+comment1.params=
+comment1.target=java.lang.String\ getDniAdultoacompania()
+comment2.params=dniAdultoacompania
+comment2.target=void\ setDniAdultoacompania(java.lang.String)
+numComments=3

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Menu()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Entradas\r\n
+comment1.params=
+comment1.target=void\ menuPrincipal()
+comment2.params=
+comment2.target=void\ menuEntradasPrincipal()
+comment3.params=
+comment3.target=void\ menuEmitirEntradas()
+comment4.params=
+comment4.target=void\ limpiarPantalla()
+numComments=5

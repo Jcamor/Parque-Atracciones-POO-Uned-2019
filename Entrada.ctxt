@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ menuGenerarEntrada()
+comment1.params=pregunta
+comment1.target=boolean\ preguntasVarias(java.lang.String)
+comment2.params=fecha
+comment2.target=boolean\ validarFecha(java.lang.String)
+numComments=3

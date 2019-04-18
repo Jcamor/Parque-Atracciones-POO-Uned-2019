@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=dni\ nombre\ edad\ alturaCm\ fechaEntrada\ diversidadFuncional\ estudiante\ carnetJoven\ desempleado
+comment0.target=Adulto(java.lang.String,\ java.lang.String,\ int,\ int,\ java.lang.String,\ boolean,\ boolean,\ boolean,\ boolean)
+comment1.params=
+comment1.target=boolean\ esEstudiante()
+comment2.params=estudiante
+comment2.target=void\ setEstudiante(boolean)
+comment3.params=
+comment3.target=boolean\ esCarnetJoven()
+comment4.params=carnetJoven
+comment4.target=void\ setCarnetJoven(boolean)
+comment5.params=
+comment5.target=boolean\ esDesempleado()
+comment6.params=desempleado
+comment6.target=void\ setDesempleado(boolean)
+numComments=7

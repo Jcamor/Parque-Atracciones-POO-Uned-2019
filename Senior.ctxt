@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=dni\ nombre\ edad\ alturaCm\ fechaEntrada\ diversidadFuncional
+comment0.target=Senior(java.lang.String,\ java.lang.String,\ int,\ int,\ java.lang.String,\ boolean)
+numComments=1
