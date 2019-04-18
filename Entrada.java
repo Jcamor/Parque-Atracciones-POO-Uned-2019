@@ -26,10 +26,9 @@ public class Entrada {
 	private boolean entradaVip = false;
 	private boolean ventaAnticipada = false;
 	private String fechaEntrada = "";
-	private Scanner sn;
 	
 	public void menuGenerarEntrada() {
-		sn = new Scanner(System.in);
+		Scanner sn = new Scanner(System.in);
 		boolean salir = false;
 		limpiarPantalla();
 		System.out.println("\n\n\n\n");
@@ -129,4 +128,16 @@ public class Entrada {
             } catch (Exception e) {}
     }
 
+    public void compararFechas() {
+    	Date [] temporadaAlta = new Date[100];
+    	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    	try {
+			temporadaAlta [0] = sdf.parse("01/01/2019");
+			temporadaAlta [1] = sdf.parse("02/01/2019");
+	    	
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+    	
+    }
 }
