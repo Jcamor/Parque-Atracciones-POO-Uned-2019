@@ -109,13 +109,13 @@ public class Menu
                     default:
                         limpiarPantalla();
                         System.out.println("\n\n");
-                        System.out.println("Solo nÃºmeros entre 1 y 4");
+                        System.out.println("Solo números entre 1 y 4");
                        // System.out.println("\n\n");
                 }
             } catch (InputMismatchException e) {
                 limpiarPantalla();
                 System.out.println("\n\n");
-                System.out.println("Solo nÃºmeros del 1 al 4");
+                System.out.println("Solo números del 1 al 4");
                 //System.out.println("\n\n");
                 sn.next();
             }
@@ -154,21 +154,17 @@ public class Menu
                         System.out.println("Has seleccionado la opcion 2");
                         break;
                     case 3:
-                        
-                        System.out.println("Has seleccionado la opcion 3");
-                        break;
-                    case 4:
                         salir = true;
                         break;
                     default:
                         limpiarPantalla();
                         System.out.println("\n\n");
-                        System.out.println("Solo nÃºmeros entre 1 y 4");
+                        System.out.println("Solo números entre 1 y 3");
                 }
             } catch (InputMismatchException e) {
                 limpiarPantalla();
                 System.out.println("\n\n");
-                System.out.println("Solo nÃºmeros del 1 al 4");
+                System.out.println("Solo números del 1 al 3");
                 sn.next();
             }
         }
