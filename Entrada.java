@@ -30,7 +30,7 @@ public class Entrada {
 	private Date temporadaAlta[];
 	private Date temporadaBaja[];
 
-	public void menuGenerarEntrada() {
+	public void menuGenerarEntrada(boolean ventaAnticipada) {
 		Scanner sn = new Scanner(System.in);
 		boolean salir = false;
 		limpiarPantalla();
@@ -55,7 +55,6 @@ public class Entrada {
 				diversidadFuncional = preguntasVarias("Diversidad Funcional");
 				entradaVip = preguntasVarias("Entrada VIP");
 				entradaTarde = preguntasVarias("Entrada por la Tarde");
-				ventaAnticipada = preguntasVarias("Venta Anticipada");
 				if (edad > 12 && edad < 64) {
 					carnetJoven = preguntasVarias("Carnet Joven");
 					desempleado = preguntasVarias("Desempleado");
@@ -76,12 +75,13 @@ public class Entrada {
 
 				salir = true;
 			} catch (InputMismatchException e) {
-				System.out.println("Solo números");
+				System.out.println("Solo numeros");
 				sn.next();
 			}
 
 		}
 		boolean temporada = false;
+		cargarFechas();
 		temporada = compararFechaAlta();
 		temporada = compararFechaBaja();
 		System.out.println(fechaEntrada);
@@ -134,24 +134,32 @@ public class Entrada {
 		} catch (Exception e) {
 		}
 	}
+
 	public boolean compararFechaAlta() {
-		boolean temAlta=false;
-		
-		for (int i=0; i<70; i++) {
-			if (fechaEntrada.equals(temporadaAlta[i]));
-				System.out.println("Es temporada alta" + fechaEntrada);
+		boolean temAlta = false;
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		for (int i = 0; i < temporadaAlta.length; i++) {
+			String fechaParaComparar = sdf.format(temporadaAlta[i]);
+			if (fechaEntrada.equals(fechaParaComparar)) {
+
+				System.out.println("Es temporada alta " + fechaEntrada);
 				temAlta = true;
+			}
 		}
 		return temAlta;
-				        
+
 	}
 
 	public boolean compararFechaBaja() {
-		boolean temBaja=false;
-		for (int i=0; i<50; i++) {
-			if (fechaEntrada.equals(temporadaBaja[i]));
-				System.out.println("Es temporada baja" + fechaEntrada);
+		boolean temBaja = false;
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		for (int i = 0; i < temporadaBaja.length; i++) {
+			String fechaParaComparar = sdf.format(temporadaBaja[i]);
+			if (fechaEntrada.equals(fechaParaComparar)) {
+
+				System.out.println("Es temporada baja " + fechaEntrada);
 				temBaja = true;
+			}
 		}
 		return temBaja;
 	}

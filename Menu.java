@@ -12,6 +12,8 @@ public class Menu
     /**
      * Constructor for objects of class Entradas
      */
+	private boolean ventaAnticipada = false;
+	
     public Menu()
     {
         // initialise instance variables
@@ -96,8 +98,8 @@ public class Menu
                         menuEmitirEntradas();
                         break;
                     case 2:
-                        
-                        System.out.println("Has seleccionado la opcion 2");
+                        ventaAnticipada = true;
+                        menuEmitirEntradas();
                         break;
                     case 3:
                         
@@ -147,7 +149,7 @@ public class Menu
                     case 1:
                         limpiarPantalla();
                         Entrada entrada = new Entrada();
-                        entrada.menuGenerarEntrada();
+                        entrada.menuGenerarEntrada(ventaAnticipada);
                         break;
                     case 2:
                         
