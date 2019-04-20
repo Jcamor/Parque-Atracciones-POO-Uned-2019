@@ -13,6 +13,7 @@ public class Menu
      * Constructor for objects of class Entradas
      */
 	private boolean ventaAnticipada = false;
+	private boolean entradaFamilia = false;
 	
     public Menu()
     {
@@ -74,6 +75,7 @@ public class Menu
     public void menuEntradasPrincipal(){
         Scanner sn = new Scanner(System.in);
         boolean salir = false;
+        ventaAnticipada=false;
         int opcion; //Guardaremos la opcion del usuario
         limpiarPantalla();
         while (!salir) {
@@ -128,6 +130,7 @@ public class Menu
     public void menuEmitirEntradas(){
         Scanner sn = new Scanner(System.in);
         boolean salir = false;
+        entradaFamilia = false;
         int opcion; //Guardaremos la opcion del usuario
         limpiarPantalla();
         while (!salir) {
@@ -149,11 +152,13 @@ public class Menu
                     case 1:
                         limpiarPantalla();
                         Entrada entrada = new Entrada();
-                        entrada.menuGenerarEntrada(ventaAnticipada);
+                        entrada.menuGenerarEntrada(ventaAnticipada, entradaFamilia);
                         break;
                     case 2:
-                        
-                        System.out.println("Has seleccionado la opcion 2");
+                        limpiarPantalla();
+                        Entrada entradafamiliar = new Entrada();
+                        entradaFamilia = true;
+                        entradafamiliar.menuGenerarEntrada(ventaAnticipada,entradaFamilia);
                         break;
                     case 3:
                         salir = true;

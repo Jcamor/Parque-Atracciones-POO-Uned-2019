@@ -20,17 +20,20 @@ public class Entrada {
 	private String nombre = "";
 	private int edad = 0;
 	private int alturaCm = 0;
+	private double precioEntrada = 0;
 	private boolean diversidadFuncional = false;
 	private boolean carnetJoven = false;
+	private boolean carnetEstudiante = false;
 	private boolean desempleado = false;
 	private boolean entradaTarde = false;
 	private boolean entradaVip = false;
 	private boolean ventaAnticipada = false;
+	private boolean entradaFamilia = false;
 	private String fechaEntrada = "";
 	private Date temporadaAlta[];
 	private Date temporadaBaja[];
 
-	public void menuGenerarEntrada(boolean ventaAnticipada) {
+	public void menuGenerarEntrada(boolean ventaAnticipada, boolean entradaFamilia) {
 		Scanner sn = new Scanner(System.in);
 		boolean salir = false;
 		limpiarPantalla();
@@ -40,39 +43,43 @@ public class Entrada {
 		System.out.println();
 		while (!salir) {
 			try {
-				System.out.print("DNI del Cliente: ");
-				dni = sn.nextLine();
-				System.out.println();
-				System.out.print("Nombre del Cliente: ");
-				nombre = sn.nextLine();
-				System.out.println();
 				System.out.print("Edad: ");
 				edad = sn.nextInt();
 				System.out.println();
-				System.out.print("Altura en centimetros: ");
-				alturaCm = sn.nextInt();
-				System.out.println();
-				diversidadFuncional = preguntasVarias("Diversidad Funcional");
-				entradaVip = preguntasVarias("Entrada VIP");
-				entradaTarde = preguntasVarias("Entrada por la Tarde");
-				if (edad > 12 && edad < 64) {
-					carnetJoven = preguntasVarias("Carnet Joven");
-					desempleado = preguntasVarias("Desempleado");
-				}
+				if (edad < 3) {
+					System.out.print("DNI del Cliente: ");
+					dni = sn.nextLine();
+					System.out.println();
+					System.out.print("Nombre del Cliente: ");
+					nombre = sn.nextLine();
+					System.out.println();
+					System.out.print("Altura en centimetros: ");
+					alturaCm = sn.nextInt();
+					System.out.println();
+					diversidadFuncional = preguntasVarias("Diversidad Funcional");
+					entradaVip = preguntasVarias("Entrada VIP");
+					entradaTarde = preguntasVarias("Entrada por la Tarde");
+					if (edad > 12 && edad < 64) {
+						carnetJoven = preguntasVarias("Carnet Joven");
+						carnetEstudiante = preguntasVarias("Carnet Estudiante");
+						desempleado = preguntasVarias("Desempleado");
+					}
 
-				if (ventaAnticipada) {
-					do {
-						Scanner leerFecha = new Scanner(System.in);
-						System.out.println("Fecha Entrada (dd/mm/aaaa)");
-						fechaEntrada = leerFecha.next();
-					} while (!validarFecha(fechaEntrada));
-				} else {
-					Date fecha = new Date();
-					String fechaFormato = "dd/MM/yyyy";
-					SimpleDateFormat formatoFecha = new SimpleDateFormat(fechaFormato);
-					fechaEntrada = (formatoFecha.format(fecha));
-				}
+					if (ventaAnticipada) {
+						do {
+							Scanner leerFecha = new Scanner(System.in);
+							System.out.println("Fecha Entrada (dd/mm/aaaa)");
+							fechaEntrada = leerFecha.next();
+						} while (!validarFecha(fechaEntrada));
+					} else {
+						Date fecha = new Date();
+						String fechaFormato = "dd/MM/yyyy";
+						SimpleDateFormat formatoFecha = new SimpleDateFormat(fechaFormato);
+						fechaEntrada = (formatoFecha.format(fecha));
+					}
 
+				} else
+					System.out.println("Niños menores de 3 años no necesitan entrada");
 				salir = true;
 			} catch (InputMismatchException e) {
 				System.out.println("Solo numeros");
@@ -87,6 +94,43 @@ public class Entrada {
 		System.out.println(fechaEntrada);
 		System.out.println("Dni: " + dni + nombre + edad + alturaCm + diversidadFuncional);
 
+	}
+
+	public double calcularPrecioEntrada() {
+		double precioAcumulado = 0;
+		if (edad > 2) {
+			if (edad > 12 && edad < 64) {
+				double precioMinimo = (precioEntrada * 0.10);
+				if (carnetJoven) {
+					precioAcumulado = (precioEntrada * 0.90);
+				}
+				if (carnetEstudiante) {
+					precioAcumulado = precioAcumulado - (precioEntrada * 0.90);
+				}
+				if (desempleado) {
+					precioAcumulado = precioAcumulado - (precioEntrada * 0.90);
+				}
+				
+			}
+			if (diversidadFuncional) {
+				precioAcumulado = precioAcumulado - (precioEntrada * 0.80);
+			}
+			if (compararFechaAlta()) {
+				precioAcumulado = precioAcumulado + (precioEntrada * 0.25);
+			}
+			if (compararFechaBaja()) {
+				precioAcumulado = precioAcumulado - (precioEntrada * 0.25);
+			}
+			if (entradaFamilia) {
+				precioAcumulado = precioAcumulado - (precioEntrada * 0.25);
+			}
+			if (entradaTarde) {
+				precioAcumulado = precioAcumulado - (precioEntrada * 0.50);
+
+			}
+
+		}
+		return precioAcumulado;
 	}
 
 	public boolean preguntasVarias(String pregunta) {
