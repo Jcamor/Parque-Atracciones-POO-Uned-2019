@@ -7,8 +7,10 @@
  */
 public class Senior extends Cliente {
 
-	public Senior(String dni, String nombre, int edad, int alturaCm, String fechaEntrada, boolean diversidadFuncional) {
-		super(dni, nombre, edad, alturaCm, fechaEntrada, diversidadFuncional);
+	public Senior(String dni, String nombre, int edad, int alturaCm, String fechaEntrada,
+                boolean diversidadFuncional, boolean entradaVip, boolean entradaTarde,
+		double precioEntrada) {
+		super(dni, nombre, edad, alturaCm, fechaEntrada, diversidadFuncional, entradaVip, entradaTarde, precioEntrada);
 		// TODO Auto-generated constructor stub
 	}
 

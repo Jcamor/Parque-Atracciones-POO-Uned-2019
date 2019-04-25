@@ -13,9 +13,12 @@ public class Cliente
 	private int alturaCm;
 	private String fechaEntrada;
 	private boolean diversidadFuncional;
+        boolean entradaVip;
+        boolean entradaTarde;
+        double precioEntrada;
 
 	public Cliente(String dni, String nombre, int edad, int alturaCm, String fechaEntrada,
-			boolean diversidadFuncional) {
+			boolean diversidadFuncional, boolean entradaVip, boolean entradaTarde, double precioEntrada) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
@@ -23,6 +26,9 @@ public class Cliente
 		this.alturaCm = alturaCm;
 		this.fechaEntrada = fechaEntrada;
 		this.diversidadFuncional = diversidadFuncional;
+                this.entradaVip = entradaVip;
+                this.entradaTarde = entradaTarde;
+                this.precioEntrada = precioEntrada;
 	}
 
 	// instance variables - replace the example below with your own
@@ -73,5 +79,28 @@ public class Cliente
 	public void setDiversidadFuncional(boolean diversidadFuncional) {
 		this.diversidadFuncional = diversidadFuncional;
 	}
+        
+        public boolean esEntradaVip() {
+		return entradaVip;
+	}
 
+	public void setEntradaVip(boolean entradaVip) {
+		this.entradaVip = entradaVip;
+	}
+        
+        public boolean esEntradaTarde() {
+		return entradaTarde;
+	}
+
+	public void setEntradaTarde(boolean entradaTarde) {
+		this.entradaTarde = entradaTarde;
+	}
+        
+        public double esPrecioEntrada() {
+		return precioEntrada;
+	}
+
+	public void setPrecioEntrada(double precioEntrada) {
+		this.precioEntrada = precioEntrada;
+	}
 }

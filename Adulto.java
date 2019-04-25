@@ -11,9 +11,10 @@ public class Adulto extends Cliente {
 	private boolean carnetJoven;
 	private boolean desempleado;
 
-	public Adulto(String dni, String nombre, int edad, int alturaCm, String fechaEntrada, boolean diversidadFuncional,
-			boolean estudiante, boolean carnetJoven, boolean desempleado) {
-		super(dni, nombre, edad, alturaCm, fechaEntrada, diversidadFuncional);
+	public Adulto(String dni, String nombre, int edad, int alturaCm, String fechaEntrada,
+                boolean diversidadFuncional, boolean entradaVip, boolean entradaTarde,
+		double precioEntrada, boolean estudiante, boolean carnetJoven, boolean desempleado) {
+		super(dni, nombre, edad, alturaCm, fechaEntrada, diversidadFuncional, entradaVip, entradaTarde, precioEntrada);
 		this.estudiante = estudiante;
 		this.carnetJoven = carnetJoven;
 		this.desempleado = desempleado;

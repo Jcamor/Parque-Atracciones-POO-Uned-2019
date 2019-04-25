@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+
+
 /**
  * Write a description of class ParqueAtracciones here.
  * 
@@ -10,10 +13,12 @@
  
 public class ParqueAtracciones
 {
+    private ArrayList<Cliente> clientes;
         
     public static void main(String[] args) 
     {
-        Menu menu = new Menu();
+        ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+        Menu menu = new Menu(clientes);
         menu.menuPrincipal();
     }
 }   
