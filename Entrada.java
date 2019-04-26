@@ -8,8 +8,6 @@
 import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
-//import java.util.Calendar;
-//import java.util.GregorianCalendar;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -91,17 +89,19 @@ public class Entrada {
                     System.out.print("Altura en centimetros: ");
                     alturaCm = sn.nextInt();
                     System.out.println();
+                    diversidadFuncional = false;
                     diversidadFuncional = preguntasVarias("Diversidad Funcional");
+                    entradaTarde = false;
                     entradaTarde = preguntasVarias("Entrada por la Tarde");
+                    entradaVip = false;
                     if (!entradaFamilia) {
                         entradaVip = preguntasVarias("Entrada VIP");
                     }
-                    if (todasEntradasVip) {
+                    if (todasEntradasVip && entradaFamilia) {
                         entradaVip = true;
-                    } else {
-                        entradaVip = false;
-                    }
-                    if (contadorEntradaFamilia == 1) {
+                    } 
+                    
+                    if (contadorEntradaFamilia == 1 && entradaFamilia) {
                         entradaVip = preguntasVarias("Entrada VIP");
                         todasEntradasVip = entradaVip;
                     }
@@ -115,8 +115,11 @@ public class Entrada {
                     }
 
                     if (edad > 12 && edad < 64) {
+                        carnetJoven = false;
                         carnetJoven = preguntasVarias("Carnet Joven");
+                        carnetEstudiante = false;
                         carnetEstudiante = preguntasVarias("Carnet Estudiante");
+                        desempleado = false;
                         desempleado = preguntasVarias("Desempleado");
                     }
 
@@ -135,6 +138,7 @@ public class Entrada {
                     System.out.println();
                     System.out.println();
                 }
+                
                 imprimirEntrada();
 
                 entradaAceptada = preguntasVarias("Es correcta la entrada");
@@ -159,7 +163,7 @@ public class Entrada {
                 if (!entradaFamilia) {
                     salir = true;
                 }
-                if (edad < 3) {    
+                if (edad < 3 && entradaFamilia) {    
                     contadorEntradaFamilia--;
                 }
 
@@ -181,6 +185,7 @@ public class Entrada {
             }
         }
 
+    
     }
 
     public void fechaVentaAnticipada() {
@@ -217,7 +222,7 @@ public class Entrada {
 
     public void imprimirEntrada() {
         limpiarPantalla();
-        if (edad > 3) {
+        if (edad > 2) {
             System.out.println("Entrada Parque Atracciones");
             System.out.println("==========================");
             System.out.println("Dni: " + dni + "  Nombre: " + nombre);

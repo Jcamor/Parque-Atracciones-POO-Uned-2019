@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
 /**
  * Write a description of class Entradas here.
  *
@@ -16,14 +17,12 @@ public class Menu {
      */
     private boolean ventaAnticipada = false;
     private boolean entradaFamilia = false;
-    private ArrayList<Cliente> clientes;
+    public ArrayList<Cliente> clientes;
+    public ArrayList<Empleado> empleados;
 
-    public Menu() {
-        // initialise instance variables
-    }
-
-    Menu(ArrayList<Cliente> clientes) {
+    public Menu(ArrayList<Cliente> clientes, ArrayList<Empleado> empleados) {
         this.clientes = clientes;
+        this.empleados = empleados;
     }
 
     public void menuPrincipal() {
@@ -33,7 +32,7 @@ public class Menu {
         int opcion; //Guardaremos la opcion del usuario
         limpiarPantalla();
         while (!salir) {
-            System.out.println("\n\n\n\n");
+            //System.out.println("\n\n\n\n");
             System.out.println("    MENU PARQUE DE ATRACCIONES");
             System.out.println("    ==========================");
             System.out.println("      [1]. Menu Entradas");
@@ -53,7 +52,7 @@ public class Menu {
                         menuEntradasPrincipal();
                         break;
                     case 2:
-                        System.out.println("Has seleccionado la opcion 2");
+                        empleado.menuEmpleados();                        
                         break;
                     case 3:
                         System.out.println("Has seleccionado la opcion 3");
@@ -84,7 +83,7 @@ public class Menu {
         int opcion; //Guardaremos la opcion del usuario
         limpiarPantalla();
         while (!salir) {
-            System.out.println("\n\n\n\n");
+            //System.out.println("\n\n\n\n");
             System.out.println("    MENU ENTRADAS PARQUE DE ATRACCIONES");
             System.out.println("    ===================================");
             System.out.println("      [1]. Entradas para el Dia");
@@ -133,7 +132,7 @@ public class Menu {
         int opcion; //Guardaremos la opcion del usuario
         limpiarPantalla();
         while (!salir) {
-            System.out.println("\n\n\n\n");
+            //System.out.println("\n\n\n\n");
             System.out.println("    MENU EMITIR ENTRADAS PARQUE DE ATRACCIONES");
             System.out.println("    ==========================================");
             System.out.println("      [1]. Entrada Individual");
