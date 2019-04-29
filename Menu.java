@@ -53,8 +53,6 @@ public class Menu {
                         menuEntradasPrincipal();
                         break;
                     case 2:
-                        //Empleado e = new Empleado();
-                        //ArrayList<Empleado> empleados = new ArrayList<Empleado>();
                         menuEmpleados();
                         break;
                     case 3:
@@ -66,13 +64,13 @@ public class Menu {
                     default:
                         limpiarPantalla();
                         System.out.println("\n\n");
-                        System.out.println("Solo nÃºmeros entre 1 y 4");
+                        System.out.println("Solo numeros entre 1 y 4");
                     //System.out.println("\n\n");
                 }
             } catch (InputMismatchException e) {
                 limpiarPantalla();
                 System.out.println("\n\n");
-                System.out.println("Solo nÃºmeros entre 1 y 4");
+                System.out.println("Solo numeros entre 1 y 4");
                 //System.out.println("\n\n");
                 sn.next();
             }
