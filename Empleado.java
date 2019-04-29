@@ -19,7 +19,6 @@ public class Empleado {
     private String direccion;
     private double sueldoMes;
     final double sueldoBase = 950;
-   // public ArrayList<Empleado> empleados;
 
     public Empleado(String dni, String nombre, String direccion, int telefono,
             String puesto, double sueldoMes) {
