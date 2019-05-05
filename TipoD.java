@@ -5,29 +5,24 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class TipoD extends Atracciones
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class TipoD extends Atracciones {
 
-    /**
-     * Constructor for objects of class TipoD
-     */
-    public TipoD()
-    {
-        // initialise instance variables
-        x = 0;
+    public TipoD(int numeroAtracciones) {
+        super();
+        this.setSenior(true);
+        this.setAdulto(true);
+        this.setNino(true);
+        this.setVip(true);
+        this.setAlturaMax(250);
+        this.setAlturaMin(0);
+        this.setAyudantesAtraccion(5);
+        this.setResponsableAtraccion(1);
+        this.setNumeroDeAtracciones(numeroAtracciones);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    @Override
+    public String toString() {
+        return "TipoD{" + '}';
     }
+
 }

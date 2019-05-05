@@ -5,29 +5,24 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class TipoE extends Atracciones
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class TipoE extends Atracciones {
 
-    /**
-     * Constructor for objects of class TipoE
-     */
-    public TipoE()
-    {
-        // initialise instance variables
-        x = 0;
+    public TipoE(int numeroAtracciones) {
+        super();
+        this.setSenior(true);
+        this.setAdulto(true);
+        this.setNino(false);
+        this.setVip(true);
+        this.setAlturaMax(250);
+        this.setAlturaMin(0);
+        this.setAyudantesAtraccion(7);
+        this.setResponsableAtraccion(1);
+        this.setNumeroDeAtracciones(numeroAtracciones);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    @Override
+    public String toString() {
+        return "TipoE{" + '}';
     }
+
 }

@@ -5,29 +5,24 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class TipoC extends Atracciones
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class TipoC extends Atracciones {
 
-    /**
-     * Constructor for objects of class TipoC
-     */
-    public TipoC()
-    {
-        // initialise instance variables
-        x = 0;
+    public TipoC(int numeroAtracciones) {
+        super();
+        this.setSenior(false);
+        this.setAdulto(false);
+        this.setNino(true);
+        this.setVip(false);
+        this.setAlturaMax(120);
+        this.setAlturaMin(0);
+        this.setAyudantesAtraccion(3);
+        this.setResponsableAtraccion(1);
+        this.setNumeroDeAtracciones(numeroAtracciones);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    @Override
+    public String toString() {
+        return "TipoC{" + '}';
     }
+
 }

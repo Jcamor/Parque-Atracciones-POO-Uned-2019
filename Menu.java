@@ -20,10 +20,13 @@ public class Menu {
 
     public ArrayList<Cliente> clientes;
     public ArrayList<Empleado> empleados;
+    public ArrayList<Atracciones> atracciones;
 
-    public Menu(ArrayList<Cliente> clientes, ArrayList<Empleado> empleados) {
+    public Menu(ArrayList<Cliente> clientes, ArrayList<Empleado> empleados,
+            ArrayList<Atracciones> atracciones) {
         this.clientes = clientes;
         this.empleados = empleados;
+        this.atracciones = atracciones;
     }
 
     public void menuPrincipal() {
@@ -38,8 +41,9 @@ public class Menu {
             System.out.println("    ==========================");
             System.out.println("      [1]. Menu Entradas");
             System.out.println("      [2]. Menu Empleados");
-            System.out.println("      [3]. Menu Datos EstadÃ­sticos");
-            System.out.println("      [4]. Salir");
+            System.out.println("      [3]. Menu Datos Estadisticos");
+            System.out.println("      [4]. Menu Atracciones");
+            System.out.println("      [5]. Salir");
 
             try {
 
@@ -59,18 +63,21 @@ public class Menu {
                         System.out.println("Has seleccionado la opcion 3");
                         break;
                     case 4:
+                        menuAtracciones();
+                        break;
+                    case 5:
                         salir = true;
                         break;
                     default:
                         limpiarPantalla();
                         System.out.println("\n\n");
-                        System.out.println("Solo numeros entre 1 y 4");
+                        System.out.println("Solo numeros entre 1 y 5");
                     //System.out.println("\n\n");
                 }
             } catch (InputMismatchException e) {
                 limpiarPantalla();
                 System.out.println("\n\n");
-                System.out.println("Solo numeros entre 1 y 4");
+                System.out.println("Solo numeros entre 1 y 5");
                 //System.out.println("\n\n");
                 sn.next();
             }
@@ -276,7 +283,7 @@ public class Menu {
             }
         }
         opcion = 0;
-        salir=false;
+        salir = false;
         while (!salir) {
             try {
                 System.out.println("       Puesto de trabajo");
@@ -374,6 +381,158 @@ public class Menu {
             System.out.println("Sueldo Mes: " + emplea.getSueldoMes());
             System.out.println();
 
+        }
+    }
+
+    public void menuAtracciones() {
+        Scanner sn = new Scanner(System.in);
+        boolean salir = false;
+        int opcion;
+        while (!salir) {
+            System.out.println("\n\n\n\n\n\n");
+            System.out.println("    MENU ATRACCIONES PARQUE ATRACCIONES");
+            System.out.println("    ===================================");
+            System.out.println("      [1]. Añadir Atracciones");
+            System.out.println("      [2]. Borrar Atracciones");
+            System.out.println("      [3]. Listar Atracciones");
+            System.out.println("      [4]. Salir");
+
+            try {
+
+                System.out.println("\n\n\n");
+                System.out.println("    Escribe una de las opciones del menu");
+                System.out.print("    > ");
+                opcion = sn.nextInt();
+
+                switch (opcion) {
+                    case 1:
+                        agregarAtracciones();
+                        break;
+                    case 2:
+                        borrarAtracciones();
+                        break;
+                    case 3:
+                        listarAtracciones();
+                        break;
+                    case 4:
+                        salir = true;
+                        break;
+                    default:
+                        System.out.println("\n\n");
+                        System.out.println("Solo números entre 1 y 4");
+                        System.out.println("\n\n");
+                }
+            } catch (InputMismatchException e) {
+
+                System.out.println("\n\n");
+                System.out.println("Solo números entre 1 y 4");
+                System.out.println("\n\n");
+                sn.next();
+            }
+        }
+    }
+
+    public void agregarAtracciones() {
+
+        Scanner sn = new Scanner(System.in);
+        boolean salir = false;
+        int numeroTipoA = 0;
+        int numeroTipoB = 0;
+        int numeroTipoC = 0;
+        int numeroTipoD = 0;
+        int numeroTipoE = 0;
+        boolean correcto = false;
+        int sumaAyudantes = 0;
+        int atencionCliente = 0;
+        int relacionesPublicas = 0;
+
+        System.out.println("\n\n\n\n\n\n");
+        System.out.println("    MENU AGREGAR ATRACCIONES");
+        System.out.println("    ========================");
+        System.out.println("\n\n\n\n");
+        System.out.print("Atracciones Tipo A ¿Cuantas? >");
+        numeroTipoA = sn.nextInt();
+        System.out.println();
+        System.out.print("Atracciones Tipo B ¿Cuantas? >");
+        numeroTipoB = sn.nextInt();
+        System.out.println();
+        System.out.print("Atracciones Tipo C ¿Cuantas? >");
+        numeroTipoC = sn.nextInt();
+        System.out.println();
+        System.out.print("Atracciones Tipo D ¿Cuantas? >");
+        numeroTipoD = sn.nextInt();
+        System.out.println();
+        System.out.print("Atracciones Tipo E ¿Cuantas? >");
+        numeroTipoE = sn.nextInt();
+        System.out.println();
+        System.out.println("    RESUMEN");
+        System.out.println("    =======\n");
+        System.out.println("Atracciones Tipo A: " + numeroTipoA);
+        System.out.println("Atracciones Tipo B: " + numeroTipoB);
+        System.out.println("Atracciones Tipo C: " + numeroTipoC);
+        System.out.println("Atracciones Tipo D: " + numeroTipoD);
+        System.out.println("Atracciones Tipo E: " + numeroTipoE);
+        correcto = preguntasVarias("Son correctas las atracciones");
+        if (correcto = true) {
+            TipoA atraccionA = new TipoA(numeroTipoA);
+            atracciones.add(atraccionA);
+            TipoB atraccionB = new TipoB(numeroTipoB);
+            atracciones.add(atraccionB);
+            TipoC atraccionC = new TipoC(numeroTipoC);
+            atracciones.add(atraccionC);
+            TipoD atraccionD = new TipoD(numeroTipoD);
+            atracciones.add(atraccionD);
+            TipoE atraccionE = new TipoE(numeroTipoE);
+            atracciones.add(atraccionE);
+            for (Atracciones atraccion : atracciones) {
+                sumaAyudantes = sumaAyudantes + atraccion.getAyudantesAtraccion();
+            }
+            atencionCliente = (int) (sumaAyudantes * 0.3);
+            relacionesPublicas = (int) (sumaAyudantes * 0.1);
+            System.out.println("Se necesitan " + atencionCliente
+                    + " empleados de Atencion al Cliente");
+            System.out.println("Se necesitan " + relacionesPublicas
+                    + " empleados de Relaciones Publicas");
+        }
+    }
+
+    public void listarAtracciones() {
+        int sumaAyudantes = 0;
+        int atencionCliente = 0;
+        int relacionesPublicas = 0;
+        for (Atracciones atraccion : atracciones) {
+            System.out.println("\n\n");
+            System.out.println("Atracciones " + atraccion.toString()
+                    + "  Numero de atracciones funcionando "
+                    + atraccion.getNumeroDeAtracciones());
+            if (atraccion.esAdulto() || atraccion.esSenior()) {
+                System.out.println("Permitido Adultos");
+            }
+            if (atraccion.esNino()) {
+                System.out.println("Permitido Niños");
+            }
+            if (atraccion.esVip()) {
+                System.out.println("Se permite el pase VIP");
+            }
+            System.out.println("Numero de Ayudantes de Atraccion: "
+                    + atraccion.getAyudantesAtraccion());
+            sumaAyudantes = sumaAyudantes + atraccion.getAyudantesAtraccion();
+        }
+        if (sumaAyudantes != 0) {
+            atencionCliente = (int) (sumaAyudantes * 0.3);
+            relacionesPublicas = (int) (sumaAyudantes * 0.1);
+            System.out.println("\n\nSe necesitan " + atencionCliente
+                    + " empleados de Atencion al Cliente");
+            System.out.println("Se necesitan " + relacionesPublicas
+                    + " empleados de Relaciones Publicas");
+        }
+
+    }
+
+    public void borrarAtracciones() {
+        System.out.println("\n\n\n\n\n");
+        if (preguntasVarias("Deseas borrar todas las Atracciones")) {
+            atracciones.clear();
         }
     }
 
