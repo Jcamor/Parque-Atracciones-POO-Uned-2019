@@ -36,7 +36,6 @@ public class Menu {
         int opcion; //Guardaremos la opcion del usuario
         limpiarPantalla();
         while (!salir) {
-            //System.out.println("\n\n\n\n");
             System.out.println("    MENU PARQUE DE ATRACCIONES");
             System.out.println("    ==========================");
             System.out.println("      [1]. Menu Entradas");
@@ -60,7 +59,8 @@ public class Menu {
                         menuEmpleados();
                         break;
                     case 3:
-                        System.out.println("Has seleccionado la opcion 3");
+                        Estadisticas estadistica = new Estadisticas(clientes, empleados, atracciones);
+                        estadistica.menuEstadisticas();
                         break;
                     case 4:
                         menuAtracciones();
@@ -72,13 +72,11 @@ public class Menu {
                         limpiarPantalla();
                         System.out.println("\n\n");
                         System.out.println("Solo numeros entre 1 y 5");
-                    //System.out.println("\n\n");
                 }
             } catch (InputMismatchException e) {
                 limpiarPantalla();
                 System.out.println("\n\n");
                 System.out.println("Solo numeros entre 1 y 5");
-                //System.out.println("\n\n");
                 sn.next();
             }
         }
@@ -91,7 +89,6 @@ public class Menu {
         int opcion; //Guardaremos la opcion del usuario
         limpiarPantalla();
         while (!salir) {
-            //System.out.println("\n\n\n\n");
             System.out.println("    MENU ENTRADAS PARQUE DE ATRACCIONES");
             System.out.println("    ===================================");
             System.out.println("      [1]. Entradas para el Dia");
@@ -107,7 +104,7 @@ public class Menu {
 
                 switch (opcion) {
                     case 1:
-
+                        ventaAnticipada = false;
                         menuEmitirEntradas();
                         break;
                     case 2:
@@ -140,7 +137,6 @@ public class Menu {
         int opcion; //Guardaremos la opcion del usuario
         limpiarPantalla();
         while (!salir) {
-            //System.out.println("\n\n\n\n");
             System.out.println("    MENU EMITIR ENTRADAS PARQUE DE ATRACCIONES");
             System.out.println("    ==========================================");
             System.out.println("      [1]. Entrada Individual");
@@ -445,25 +441,31 @@ public class Menu {
         int sumaAyudantes = 0;
         int atencionCliente = 0;
         int relacionesPublicas = 0;
-
-        System.out.println("\n\n\n\n\n\n");
-        System.out.println("    MENU AGREGAR ATRACCIONES");
-        System.out.println("    ========================");
-        System.out.println("\n\n\n\n");
-        System.out.print("Atracciones Tipo A ¿Cuantas? >");
-        numeroTipoA = sn.nextInt();
-        System.out.println();
-        System.out.print("Atracciones Tipo B ¿Cuantas? >");
-        numeroTipoB = sn.nextInt();
-        System.out.println();
-        System.out.print("Atracciones Tipo C ¿Cuantas? >");
-        numeroTipoC = sn.nextInt();
-        System.out.println();
-        System.out.print("Atracciones Tipo D ¿Cuantas? >");
-        numeroTipoD = sn.nextInt();
-        System.out.println();
-        System.out.print("Atracciones Tipo E ¿Cuantas? >");
-        numeroTipoE = sn.nextInt();
+        try {
+            System.out.println("\n\n\n\n\n\n");
+            System.out.println("    MENU AGREGAR ATRACCIONES");
+            System.out.println("    ========================");
+            System.out.println("\n\n\n\n");
+            System.out.print("Atracciones Tipo A ¿Cuantas? >");
+            numeroTipoA = sn.nextInt();
+            System.out.println();
+            System.out.print("Atracciones Tipo B ¿Cuantas? >");
+            numeroTipoB = sn.nextInt();
+            System.out.println();
+            System.out.print("Atracciones Tipo C ¿Cuantas? >");
+            numeroTipoC = sn.nextInt();
+            System.out.println();
+            System.out.print("Atracciones Tipo D ¿Cuantas? >");
+            numeroTipoD = sn.nextInt();
+            System.out.println();
+            System.out.print("Atracciones Tipo E ¿Cuantas? >");
+            numeroTipoE = sn.nextInt();
+        } catch (InputMismatchException e) {
+            limpiarPantalla();
+            System.out.println("\n\n");
+            System.out.println("Solo numeros");
+            sn.next();
+        }
         System.out.println();
         System.out.println("    RESUMEN");
         System.out.println("    =======\n");
@@ -485,7 +487,7 @@ public class Menu {
             TipoE atraccionE = new TipoE(numeroTipoE);
             atracciones.add(atraccionE);
             for (Atracciones atraccion : atracciones) {
-                sumaAyudantes = sumaAyudantes + atraccion.getAyudantesAtraccion();
+                sumaAyudantes = sumaAyudantes + 1 + atraccion.getAyudantesAtraccion();
             }
             atencionCliente = (int) (sumaAyudantes * 0.3);
             relacionesPublicas = (int) (sumaAyudantes * 0.1);
@@ -516,7 +518,7 @@ public class Menu {
             }
             System.out.println("Numero de Ayudantes de Atraccion: "
                     + atraccion.getAyudantesAtraccion());
-            sumaAyudantes = sumaAyudantes + atraccion.getAyudantesAtraccion();
+            sumaAyudantes = sumaAyudantes + 1 + atraccion.getAyudantesAtraccion();
         }
         if (sumaAyudantes != 0) {
             atencionCliente = (int) (sumaAyudantes * 0.3);

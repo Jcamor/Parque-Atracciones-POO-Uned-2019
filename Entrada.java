@@ -200,8 +200,8 @@ public class Entrada {
         try {
             temporada = comprobarTemporada();
         } catch (ParseException ex) {
-            Logger.getLogger(Entrada.class
-                    .getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(Entrada.class
+             //       .getName()).log(Level.SEVERE, null, ex);
         }
 
         switch (temporada) {

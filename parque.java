@@ -4,11 +4,10 @@ import java.util.ArrayList;
 /**
  * Write a description of class ParqueAtracciones here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Juan Carlos Amor Gutierrez)
+ * @version (1.0 5/5/19)
  */
-//import java.util.InputMismatchException;
-//import java.util.Scanner;
+
 public class parque {
 
     public ArrayList<Cliente> clientes;
