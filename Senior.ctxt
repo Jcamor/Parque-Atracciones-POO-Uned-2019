@@ -1,4 +1,7 @@
 #BlueJ class context
-comment0.params=dni\ nombre\ edad\ alturaCm\ fechaEntrada\ diversidadFuncional\ entradaVip\ entradaTarde\ precioEntrada
-comment0.target=Senior(java.lang.String,\ java.lang.String,\ int,\ int,\ java.lang.String,\ boolean,\ boolean,\ boolean,\ double)
-numComments=1
+comment0.target=Senior
+comment0.text=\r\n\ Senior\ del\ parque\ Atracciones\r\n\r\n\ @author\ Juan\ Carlos\ Amor\ Guti\u00E9rrez\r\n\ @version\ (1.0\ 05/05/2019)\r\n
+comment1.params=dni\ nombre\ edad\ alturaCm\ fechaEntrada\ diversidadFuncional\ entradaVip\ entradaTarde\ precioEntrada
+comment1.target=Senior(java.lang.String,\ java.lang.String,\ int,\ int,\ java.lang.String,\ boolean,\ boolean,\ boolean,\ double)
+comment1.text=\r\n\ Constructor\ de\ objetos\ para\ la\ clase\ Senior\r\n\r\n\ @param\ dni\r\n\ @param\ nombre\r\n\ @param\ edad\r\n\ @param\ alturaCm\r\n\ @param\ fechaEntrada\r\n\ @param\ diversidadFuncional\r\n\ @param\ entradaVip\r\n\ @param\ entradaTarde\r\n\ @param\ precioEntrada\r\n\ \r\n
+numComments=2

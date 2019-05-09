@@ -18,7 +18,7 @@ public class Atracciones {
     private int numeroDeAtracciones;
 
     /**
-     * Constructor for objects of class TipoA
+     * Constructor de objetos para la clase Atracciones
      *
      * @param senior
      * @param adulto
@@ -28,6 +28,8 @@ public class Atracciones {
      * @param alturaMin
      * @param ayudantesAtraccion
      * @param responsableAtraccion
+     * @param numeroDeAtracciones
+     * 
      */
     public Atracciones() {
         this.senior = false;
@@ -40,7 +42,8 @@ public class Atracciones {
         this.responsableAtraccion = 0;
         this.numeroDeAtracciones = 0;
     }
-
+ 
+        // Métodos Geters y Seters
     public boolean esSenior() {
         return senior;
     }

@@ -14,6 +14,17 @@ public class Empleado {
     private int telefono;
     private String direccion;
     private double sueldoMes;
+    /**
+     * Constructor para objetos de la clase Empleado
+     *
+     * @param dni
+     * @param nombre
+     * @param direccion
+     * @param telefono
+     * @param puesto
+     * @param sueldoMes 
+     *
+     */
 
     public Empleado(String dni, String nombre, String direccion, int telefono,
             String puesto, double sueldoMes) {

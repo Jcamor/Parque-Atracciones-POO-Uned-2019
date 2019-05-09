@@ -7,6 +7,21 @@
  */
 public class TipoD extends Atracciones {
 
+     /**
+     * Constructor de objetos para la clase Tipo D
+     *
+     * @param senior
+     * @param adulto
+     * @param nino
+     * @param vip
+     * @param alturaMax
+     * @param alturaMin
+     * @param ayudantesAtraccion
+     * @param responsableAtraccion
+     * @param numeroDeAtracciones
+     * 
+     */
+    
     public TipoD(int numeroAtracciones) {
         super();
         this.setSenior(true);

@@ -1,10 +1,13 @@
 #BlueJ class context
-comment0.params=dni\ nombre\ edad\ alturaCm\ fechaEntrada\ diversidadFuncional\ entradaVip\ entradaTarde\ precioEntrada\ dniAdultoacompania
-comment0.target=Nino(java.lang.String,\ java.lang.String,\ int,\ int,\ java.lang.String,\ boolean,\ boolean,\ boolean,\ double,\ java.lang.String)
-comment1.params=
-comment1.target=java.lang.String\ getDniAdultoacompania()
-comment2.params=dniAdultoacompania
-comment2.target=void\ setDniAdultoacompania(java.lang.String)
-comment3.params=
-comment3.target=java.lang.String\ toString()
-numComments=4
+comment0.target=Nino
+comment0.text=\r\n\ Ni\u00F1os\ del\ parque\ de\ Atracciones\r\n\ \r\n\ @author\ Juan\ Carlos\ Amor\ Guti\u00E9rrez\r\n\ @version\ (1.0\ 05/05/2019)\r\n
+comment1.params=dni\ nombre\ edad\ alturaCm\ fechaEntrada\ diversidadFuncional\ entradaVip\ entradaTarde\ precioEntrada\ dniAdultoacompania
+comment1.target=Nino(java.lang.String,\ java.lang.String,\ int,\ int,\ java.lang.String,\ boolean,\ boolean,\ boolean,\ double,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ de\ objetos\ para\ la\ clase\ Nino\r\n\r\n\ @param\ dni\r\n\ @param\ nombre\r\n\ @param\ edad\r\n\ @param\ alturaCm\r\n\ @param\ fechaEntrada\r\n\ @param\ diversidadFuncional\r\n\ @param\ entradaVip\r\n\ @param\ entradaTarde\r\n\ @param\ precioEntrada\r\n\ @param\ dniAdultoacompania\ \r\n
+comment2.params=
+comment2.target=java.lang.String\ getDniAdultoacompania()
+comment3.params=dniAdultoacompania
+comment3.target=void\ setDniAdultoacompania(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5

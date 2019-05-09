@@ -1,6 +1,9 @@
 #BlueJ class context
-comment0.params=numeroAtracciones
-comment0.target=TipoE(int)
-comment1.params=
-comment1.target=java.lang.String\ toString()
-numComments=2
+comment0.target=TipoE
+comment0.text=\r\n\ Atracci\u00F3n\ Tipo\ E.\r\n\r\n\ @author\ Juan\ Carlos\ Amor\ Guti\u00E9rrez\r\n\ @version\ (1.0\ 05/05/2019)\r\n
+comment1.params=numeroAtracciones
+comment1.target=TipoE(int)
+comment1.text=\r\n\ Constructor\ de\ objetos\ para\ la\ clase\ Tipo\ E\r\n\r\n\ @param\ senior\r\n\ @param\ adulto\r\n\ @param\ nino\r\n\ @param\ vip\r\n\ @param\ alturaMax\r\n\ @param\ alturaMin\r\n\ @param\ ayudantesAtraccion\r\n\ @param\ responsableAtraccion\r\n\ @param\ numeroDeAtracciones\r\n\ \r\n
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3

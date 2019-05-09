@@ -18,6 +18,17 @@ public class Menu {
     public ArrayList<Cliente> clientes;
     public ArrayList<Empleado> empleados;
     public ArrayList<Atracciones> atracciones;
+    
+     /**
+     * Constructor de objetos para la clase Menu
+     *
+     * @param clientes
+     * @param empleados
+     * @param atracciones
+     * @param ventaAnticipada
+     * @param entradaFamilia
+     * 
+     */
 
     public Menu(ArrayList<Cliente> clientes, ArrayList<Empleado> empleados,
             ArrayList<Atracciones> atracciones) {

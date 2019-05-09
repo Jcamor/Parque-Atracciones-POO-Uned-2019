@@ -7,6 +7,21 @@
  */
 public class TipoC extends Atracciones {
 
+     /**
+     * Constructor de objetos para la clase Tipo C
+     *
+     * @param senior
+     * @param adulto
+     * @param nino
+     * @param vip
+     * @param alturaMax
+     * @param alturaMin
+     * @param ayudantesAtraccion
+     * @param responsableAtraccion
+     * @param numeroDeAtracciones
+     * 
+     */
+    
     public TipoC(int numeroAtracciones) {
         super();
         this.setSenior(false);

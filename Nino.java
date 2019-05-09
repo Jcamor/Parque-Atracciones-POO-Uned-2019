@@ -9,6 +9,21 @@ public class Nino extends Cliente {
 
 	private String dniAdultoacompania;
 
+        /**
+     * Constructor de objetos para la clase Nino
+     *
+     * @param dni
+     * @param nombre
+     * @param edad
+     * @param alturaCm
+     * @param fechaEntrada
+     * @param diversidadFuncional
+     * @param entradaVip
+     * @param entradaTarde
+     * @param precioEntrada
+     * @param dniAdultoacompania 
+     */
+        
 	public Nino(String dni, String nombre, int edad, int alturaCm, String fechaEntrada,
                 boolean diversidadFuncional, boolean entradaVip, boolean entradaTarde,
 		double precioEntrada, String dniAdultoacompania) {

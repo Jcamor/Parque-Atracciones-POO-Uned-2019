@@ -20,7 +20,7 @@ public class Estadisticas {
     public ArrayList<Atracciones> atracciones;
 
     /**
-     * Constructor for objects of class Estadisticas
+     * Constructor de objetos para la clase Estadísticas
      *
      * @param clientes
      * @param empleados
@@ -35,7 +35,7 @@ public class Estadisticas {
     public void menuEstadisticas() {
         Scanner sn = new Scanner(System.in);
         boolean salir = false;
-        int opcion; //Guardaremos la opcion del usuario
+        int opcion; //Guardaremos la opción del menú
         System.out.println("\n\n\n\n\n\n");
         while (!salir) {
             System.out.println("    MENU ESTADISTICAS ");
@@ -71,17 +71,17 @@ public class Estadisticas {
 
                     default:
                          System.out.println("\n\n\n\n\n\n");                        
-                        System.out.println("Solo numeros entre 1 y 5");
+                        System.out.println("Solo números entre 1 y 5");
                 }
             } catch (InputMismatchException e) {                
                  System.out.println("\n\n\n\n\n\n");
-                System.out.println("Solo numeros entre 1 y 5");
+                System.out.println("Solo números entre 1 y 5");
                 sn.next();
             }
         }
 
     }
-
+    // El número de visitantes por meses
     public void numeroDeVisitantes() {
 
         String fechaFormato = "dd/MM/yyyy";
@@ -179,6 +179,7 @@ public class Estadisticas {
         }
     }
 
+        // Calcular el precio medio de todos los clientes del parque
     public void precioMedioEntrada() {
         int i = 0;
         double totalPrecioEntrada = 0;
@@ -195,10 +196,12 @@ public class Estadisticas {
         }
     }
 
+        // Calcular las visitas medias por dias, meses, etc..
     public void visitasMedias() {
 
     }
 
+        // Calcular el gasto personal por meses y por años
     public void gastoPersonal() {
         int sumaAyudantes = 0;
         int sumaResponsables = 0;

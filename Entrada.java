@@ -23,7 +23,7 @@ public class Entrada {
     private int edad;
     private int alturaCm;
     private double precioEntrada;
-    private boolean diversidadFuncional;
+    private boolean diversidadFuncional; // minusvalía
     private boolean carnetJoven;
     private boolean carnetEstudiante;
     private boolean desempleado;
@@ -34,6 +34,14 @@ public class Entrada {
     private boolean ventaAnticipada;
     private boolean entradaFamilia;
 
+    /**
+     * Constructor de objetos para la clase Entrada
+     *
+     * @param ventaAnticipada
+     * @param entradaFamilia
+     * @param clientes
+     *
+     */
     public Entrada(boolean ventaAnticipada, boolean entradaFamilia, ArrayList<Cliente> clientes) {
         this.dni = "";
         this.nombre = "";
@@ -53,6 +61,7 @@ public class Entrada {
         this.entradaFamilia = entradaFamilia;
     }
 
+    // Menú principal para crear las entradas
     public void menuGenerarEntrada() {
 
         Scanner sn = new Scanner(System.in);
@@ -74,6 +83,7 @@ public class Entrada {
                 numeroEntradaFamilia = sn.nextInt();
             }
         }
+        // Peticiones de datos para toda la casuística respecto a las entradas
         while (!salir) {
             try {
                 if (entradaFamilia) {
@@ -182,11 +192,6 @@ public class Entrada {
                 if (numeroEntradaFamilia == contadorEntradaFamilia) {
                     salir = true;
                 }
-                /* System.out.println(clientes);
-                for (Cliente cliente : clientes) {
-                    System.out.println("Nombre: " + cliente.getNombre() + " edad: " + cliente.getEdad());
-                }
-                boolean parar = preguntasVarias("parada");*/
 
             } catch (InputMismatchException e) {
                 System.out.println("Solo numeros");
@@ -195,7 +200,7 @@ public class Entrada {
         }
 
     }
-
+    // Método para introducir una fecha del año
     public void fechaVentaAnticipada() {
         do {
             Scanner leerFecha = new Scanner(System.in);
@@ -206,10 +211,10 @@ public class Entrada {
         System.out.println();
         int temporada = 0;
         try {
-            temporada = comprobarTemporada();
+            temporada = comprobarTemporada(); 
         } catch (ParseException ex) {
         }
-
+        // Información de cuando se puede usar la entrada según la temporada
         switch (temporada) {
             case 1:
                 System.out.println("Puedes usarla solo en temporada media");
@@ -224,7 +229,8 @@ public class Entrada {
 
         System.out.println("\n\n");
     }
-
+    
+        // Imprimir en pantalla la entrada con el precio final
     public void imprimirEntrada() {
         limpiarPantalla();
         if (edad > 2) {
@@ -238,6 +244,7 @@ public class Entrada {
 
     }
 
+        // Comprobar si es fin de semana
     public boolean finDeSemana() {
         int numeroDia = 0;
         String fechaFormato = "dd/MM/yyyy";
@@ -246,8 +253,6 @@ public class Entrada {
         try {
             cal.setTime(formatoFecha.parse(fechaEntrada));
         } catch (ParseException ex) {
-            Logger.getLogger(Entrada.class
-                    .getName()).log(Level.SEVERE, null, ex);
         }
         numeroDia = cal.get(Calendar.DAY_OF_WEEK);
         if (numeroDia == 1 || numeroDia == 6 || numeroDia == 7) {
@@ -256,6 +261,7 @@ public class Entrada {
         return false;
     }
 
+        // Calcular el precio de la entrada mínimo y los descuentos aplicables
     public double calcularPrecioEntrada() {
         double precioAcumulado = 0;
         double precioMinimo = 0;
@@ -303,8 +309,6 @@ public class Entrada {
         try {
             temporada = comprobarTemporada();
         } catch (ParseException ex) {
-            Logger.getLogger(Entrada.class
-                    .getName()).log(Level.SEVERE, null, ex);
         }
         if (temporada == 2) {
             System.out.println("Aumento del 25% por Temporada Alta");
@@ -334,7 +338,7 @@ public class Entrada {
         } else {
             precioDeLaEntrada = precioAcumulado;
         }
-
+            // Suma de la entrada VIP
         if (edad > 2 && edad < 13) {
             if (entradaVip) {
                 System.out.println("Entrada VIP + 25 euros");
@@ -357,6 +361,8 @@ public class Entrada {
         return precioDeLaEntrada;
     }
 
+        // Método para realizar preguntas para los descuentos.
+        // Devuelve verdadero o falso a la pregunta.
     public boolean preguntasVarias(String pregunta) {
         Scanner sn = new Scanner(System.in);
         boolean salir = false;
@@ -383,6 +389,7 @@ public class Entrada {
         return respuestaDevuelta;
     }
 
+        // Método para comprobar que la fecha esté bien introducida
     public boolean validarFecha(String fecha) {
         try {
             SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
@@ -397,7 +404,7 @@ public class Entrada {
     public void limpiarPantalla() {
         System.out.println("\n\n\n\n\n\n");
     }
-
+        // Se comprueban las temporadas según la fecha de la entrada
     public int comprobarTemporada() throws ParseException {
         int temporada = 1; // 1=temporada media, 2=temporada alta, 3=temporada baja
         int numeroMes = 0;

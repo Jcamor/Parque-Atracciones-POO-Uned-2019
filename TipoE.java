@@ -6,6 +6,21 @@
  * @version (1.0 05/05/2019)
  */
 public class TipoE extends Atracciones {
+    
+     /**
+     * Constructor de objetos para la clase Tipo E
+     *
+     * @param senior
+     * @param adulto
+     * @param nino
+     * @param vip
+     * @param alturaMax
+     * @param alturaMin
+     * @param ayudantesAtraccion
+     * @param responsableAtraccion
+     * @param numeroDeAtracciones
+     * 
+     */
 
     public TipoE(int numeroAtracciones) {
         super();

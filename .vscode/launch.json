@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - parque",
+            "request": "launch",
+            "mainClass": "parque",
+            "projectName": "Practica BlueJ"
+        }
+    ]
+}
