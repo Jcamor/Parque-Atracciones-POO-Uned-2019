@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Adulto here.
+ * Adultos del parque de Atracciones
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Juan Carlos Amor Gutiérrez
+ * @version (1.0 05/05/2019)
  */
 
 public class Adulto extends Cliente {
@@ -43,5 +43,10 @@ public class Adulto extends Cliente {
 	public void setDesempleado(boolean desempleado) {
 		this.desempleado = desempleado;
 	}
+
+    @Override
+    public String toString() {
+        return "Adulto{" + "estudiante=" + estudiante + ", carnetJoven=" + carnetJoven + ", desempleado=" + desempleado + '}';
+    }
 
 }

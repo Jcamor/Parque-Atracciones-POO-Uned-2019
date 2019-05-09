@@ -1,13 +1,12 @@
-
-/**
- * Write a description of class Atracciones here.
+/*
+ * Para generar las Atracciones del parque
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Juan Carlos Amor Gutiérrez
+ * @version (1.0 05/05/2019)
  */
 public class Atracciones {
 
-    // instance variables - replace the example below with your own
+    // Declaramos los campos de las atracciones
     private boolean senior;
     private boolean adulto;
     private boolean nino;
@@ -116,7 +115,11 @@ public class Atracciones {
 
     @Override
     public String toString() {
-        return "Atracciones{" + "senior=" + senior + ", adulto=" + adulto + ", nino=" + nino + ", vip=" + vip + ", alturaMax=" + alturaMax + ", alturaMin=" + alturaMin + ", ayudantesAtraccion=" + ayudantesAtraccion + ", responsableAtraccion=" + responsableAtraccion + ", numeroDeAtracciones=" + numeroDeAtracciones + '}';
+        return "Atracciones{" + "senior=" + senior + ", adulto=" + adulto + ", nino="
+                + nino + ", vip=" + vip + ", alturaMax=" + alturaMax + ", alturaMin="
+                + alturaMin + ", ayudantesAtraccion=" + ayudantesAtraccion + 
+                ", responsableAtraccion=" + responsableAtraccion + ", numeroDeAtracciones="
+                + numeroDeAtracciones + '}';
     }
 
 }

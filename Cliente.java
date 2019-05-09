@@ -1,7 +1,8 @@
 /**
- * Abstract class Clientes - write a description of the class here
+ * Clientes del Parque Atracciones Superclase
  * 
- * @author: Date:
+ * @author Juan Carlos Amor Gutiérrez
+ * @version (1.0 05/05/2019)
  */
 public class Cliente
 
@@ -31,7 +32,6 @@ public class Cliente
                 this.precioEntrada = precioEntrada;
 	}
 
-	// instance variables - replace the example below with your own
 	public String getDni() {
 		return dni;
 	}
@@ -103,4 +103,13 @@ public class Cliente
 	public void setPrecioEntrada(double precioEntrada) {
 		this.precioEntrada = precioEntrada;
 	}
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "dni=" + dni + ", nombre=" + nombre + ", edad=" + edad +
+                ", alturaCm=" + alturaCm + ", fechaEntrada=" + fechaEntrada +
+                ", diversidadFuncional=" + diversidadFuncional + ", entradaVip="
+                + entradaVip + ", entradaTarde=" + entradaTarde + ", precioEntrada=" 
+                + precioEntrada + '}';
+    }
 }

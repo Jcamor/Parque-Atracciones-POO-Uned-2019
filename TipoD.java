@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class TipoD here.
+ * Atracción Tipo D.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Juan Carlos Amor Gutiérrez
+ * @version (1.0 05/05/2019)
  */
 public class TipoD extends Atracciones {
 

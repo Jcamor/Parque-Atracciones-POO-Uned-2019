@@ -2,11 +2,10 @@
 /**
  * Write a description of class Entrada here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Juan Carlos Amor Gutierrez)
+ * @version (1.0 05/05/2019)
  */
 import java.util.InputMismatchException;
-import java.util.Iterator;
 import java.util.Scanner;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,29 +17,43 @@ import java.util.logging.Logger;
 
 public class Entrada {
 
-    private String dni = "";
-    private String nombre = "";
+    private String dni;
+    private String nombre;
     private String dniacompaniante;
-    private int edad = 0;
-    private int alturaCm = 0;
-    private double precioEntrada = 0;
-    private boolean diversidadFuncional = false;
-    private boolean carnetJoven = false;
-    private boolean carnetEstudiante = false;
-    private boolean desempleado = false;
-    private boolean entradaTarde = false;
-    private boolean entradaVip = false;
-    private String fechaEntrada = "";
-
-    /**
-     *
-     */
+    private int edad;
+    private int alturaCm;
+    private double precioEntrada;
+    private boolean diversidadFuncional;
+    private boolean carnetJoven;
+    private boolean carnetEstudiante;
+    private boolean desempleado;
+    private boolean entradaTarde;
+    private boolean entradaVip;
+    private String fechaEntrada;
     private ArrayList<Cliente> clientes;
+    private boolean ventaAnticipada;
+    private boolean entradaFamilia;
 
-    private boolean ventaAnticipada = false;
-    private boolean entradaFamilia = false;
+    public Entrada(boolean ventaAnticipada, boolean entradaFamilia, ArrayList<Cliente> clientes) {
+        this.dni = "";
+        this.nombre = "";
+        this.dniacompaniante = "";
+        this.edad = 0;
+        this.alturaCm = 0;
+        this.precioEntrada = 0;
+        this.diversidadFuncional = false;
+        this.carnetJoven = false;
+        this.carnetEstudiante = false;
+        this.desempleado = false;
+        this.entradaTarde = false;
+        this.entradaVip = false;
+        this.fechaEntrada = "";
+        this.clientes = clientes;
+        this.ventaAnticipada = ventaAnticipada;
+        this.entradaFamilia = entradaFamilia;
+    }
 
-    public void menuGenerarEntrada(boolean ventaAnticipada, boolean entradaFamilia, ArrayList<Cliente> clientes) {
+    public void menuGenerarEntrada() {
 
         Scanner sn = new Scanner(System.in);
         boolean salir = false;
@@ -99,8 +112,8 @@ public class Entrada {
                     }
                     if (todasEntradasVip && entradaFamilia) {
                         entradaVip = true;
-                    } 
-                    
+                    }
+
                     if (contadorEntradaFamilia == 1 && entradaFamilia) {
                         entradaVip = preguntasVarias("Entrada VIP");
                         todasEntradasVip = entradaVip;
@@ -138,7 +151,7 @@ public class Entrada {
                     System.out.println();
                     System.out.println();
                 }
-                
+
                 imprimirEntrada();
 
                 entradaAceptada = preguntasVarias("Es correcta la entrada");
@@ -163,21 +176,17 @@ public class Entrada {
                 if (!entradaFamilia) {
                     salir = true;
                 }
-                if (edad < 3 && entradaFamilia) {    
+                if (edad < 3 && entradaFamilia) {
                     contadorEntradaFamilia--;
                 }
-
                 if (numeroEntradaFamilia == contadorEntradaFamilia) {
-
                     salir = true;
-
                 }
-
-                System.out.println(clientes);
+                /* System.out.println(clientes);
                 for (Cliente cliente : clientes) {
                     System.out.println("Nombre: " + cliente.getNombre() + " edad: " + cliente.getEdad());
                 }
-                boolean parar = preguntasVarias("parada");
+                boolean parar = preguntasVarias("parada");*/
 
             } catch (InputMismatchException e) {
                 System.out.println("Solo numeros");
@@ -185,7 +194,6 @@ public class Entrada {
             }
         }
 
-    
     }
 
     public void fechaVentaAnticipada() {
@@ -200,8 +208,6 @@ public class Entrada {
         try {
             temporada = comprobarTemporada();
         } catch (ParseException ex) {
-           // Logger.getLogger(Entrada.class
-             //       .getName()).log(Level.SEVERE, null, ex);
         }
 
         switch (temporada) {
@@ -216,8 +222,7 @@ public class Entrada {
                 break;
         }
 
-        System.out.println();
-        System.out.println();
+        System.out.println("\n\n");
     }
 
     public void imprimirEntrada() {
@@ -228,9 +233,7 @@ public class Entrada {
             System.out.println("Dni: " + dni + "  Nombre: " + nombre);
             this.precioEntrada = calcularPrecioEntrada();
             System.out.println("El precio de la entrada: " + precioEntrada);
-            System.out.println();
-            System.out.println();
-
+            System.out.println("\n\n");
         }
 
     }
@@ -405,8 +408,6 @@ public class Entrada {
         try {
             cal.setTime(formatoFecha.parse(fechaEntrada));
         } catch (ParseException ex) {
-            Logger.getLogger(Entrada.class
-                    .getName()).log(Level.SEVERE, null, ex);
         }
         numeroDia = cal.get(Calendar.DAY_OF_MONTH);
         numeroMes = cal.get(Calendar.MONTH);

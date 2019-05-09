@@ -1,7 +1,8 @@
 #BlueJ class context
-comment0.target=Entrada
-comment1.params=ventaAnticipada\ entradaFamilia\ clientes
-comment1.target=void\ menuGenerarEntrada(boolean,\ boolean,\ java.util.ArrayList)
+comment0.params=ventaAnticipada\ entradaFamilia\ clientes
+comment0.target=Entrada(boolean,\ boolean,\ java.util.ArrayList)
+comment1.params=
+comment1.target=void\ menuGenerarEntrada()
 comment2.params=
 comment2.target=void\ fechaVentaAnticipada()
 comment3.params=

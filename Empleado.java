@@ -1,24 +1,19 @@
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 /**
- * Write a description of class Empleado here.
+ * Empleados
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Juan Carlos Amor Gutiérrez
+ * @version (1.0 05/05/2019)
  */
 public class Empleado {
 
-    // instance variables - replace the example below with your own
+    // Campos de los empleados
     private String dni;
     private String nombre;
     private String puesto;
     private int telefono;
     private String direccion;
     private double sueldoMes;
-    final double sueldoBase = 950;
 
     public Empleado(String dni, String nombre, String direccion, int telefono,
             String puesto, double sueldoMes) {

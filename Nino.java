@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Nino here.
+ * Niños del parque de Atracciones
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Juan Carlos Amor Gutiérrez
+ * @version (1.0 05/05/2019)
  */
 public class Nino extends Cliente {
 
@@ -23,5 +23,10 @@ public class Nino extends Cliente {
 	public void setDniAdultoacompania(String dniAdultoacompania) {
 		this.dniAdultoacompania = dniAdultoacompania;
 	}
+
+    @Override
+    public String toString() {
+        return "Nino{" + "dniAdultoacompania=" + dniAdultoacompania + '}';
+    }
 
 }

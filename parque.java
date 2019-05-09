@@ -2,12 +2,11 @@
 import java.util.ArrayList;
 
 /**
- * Write a description of class ParqueAtracciones here.
+ * La Clase parque para iniciar el programa.
  *
  * @author (Juan Carlos Amor Gutierrez)
  * @version (1.0 5/5/19)
  */
-
 public class parque {
 
     public ArrayList<Cliente> clientes;
@@ -20,6 +19,12 @@ public class parque {
         ArrayList<Atracciones> atracciones = new ArrayList<Atracciones>();
         Menu menu = new Menu(clientes, empleados, atracciones);
         menu.menuPrincipal();
-        System.out.println(clientes);
     }
+
+    @Override
+    public String toString() {
+        return "parque{" + "clientes=" + clientes + ", empleados=" + empleados + ", atracciones=" + atracciones + '}';
+    }
+
+    
 }
