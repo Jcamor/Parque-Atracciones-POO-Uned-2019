@@ -109,7 +109,7 @@ public class Entrada {
                         dniacompaniante = sn.nextLine();
                         System.out.println();
                     }
-                    System.out.print("Altura en centimetros: ");
+                    System.out.print("Altura en centímetros: ");
                     alturaCm = sn.nextInt();
                     System.out.println();
                     diversidadFuncional = false;
@@ -194,7 +194,7 @@ public class Entrada {
                 }
 
             } catch (InputMismatchException e) {
-                System.out.println("Solo numeros");
+                System.out.println("Solo números");
                 sn.next();
             }
         }

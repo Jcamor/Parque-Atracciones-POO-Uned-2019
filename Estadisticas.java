@@ -40,7 +40,7 @@ public class Estadisticas {
         while (!salir) {
             System.out.println("    MENU ESTADISTICAS ");
             System.out.println("    ==================");
-            System.out.println("      [1]. Numero de Visitantes");
+            System.out.println("      [1]. Número de Visitantes");
             System.out.println("      [2]. Precio Medio de la Entrada");
             System.out.println("      [3]. Visitas medias registradas");
             System.out.println("      [4]. Resumen anual del gasto de personal");
@@ -49,7 +49,7 @@ public class Estadisticas {
             try {
 
                 System.out.println("\n\n\n");
-                System.out.println("    Escribe una de las opciones del menu");
+                System.out.println("    Escribe una de las opciones del menú");
                 System.out.print("    > ");
                 opcion = sn.nextInt();
 

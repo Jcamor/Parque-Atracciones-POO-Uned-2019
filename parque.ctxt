@@ -3,6 +3,4 @@ comment0.target=parque
 comment0.text=\r\n\ La\ Clase\ parque\ para\ iniciar\ el\ programa.\r\n\r\n\ @author\ (Juan\ Carlos\ Amor\ Gutierrez)\r\n\ @version\ (1.0\ 5/5/19)\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment2.params=
-comment2.target=java.lang.String\ toString()
-numComments=3
+numComments=2

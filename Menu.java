@@ -49,10 +49,10 @@ public class Menu {
         while (!salir) {
             System.out.println("    MENU PARQUE DE ATRACCIONES");
             System.out.println("    ==========================");
-            System.out.println("      [1]. Menu Entradas");
-            System.out.println("      [2]. Menu Empleados");
-            System.out.println("      [3]. Menu Datos Estadísticos");
-            System.out.println("      [4]. Menu Atracciones");
+            System.out.println("      [1]. Menú Entradas");
+            System.out.println("      [2]. Menú Empleados");
+            System.out.println("      [3]. Menú Datos Estadísticos");
+            System.out.println("      [4]. Menú Atracciones");
             System.out.println("      [5]. Salir");
 
             try {
@@ -518,7 +518,7 @@ public class Menu {
             if (atraccion.esVip()) {
                 System.out.println("Se permite el pase VIP");
             }
-            System.out.println("Número de Ayudantes de Atraccion: "
+            System.out.println("Número de Ayudantes de Atracción: "
                     + atraccion.getAyudantesAtraccion());
             sumaAyudantes = sumaAyudantes + 1 + atraccion.getAyudantesAtraccion();
         }

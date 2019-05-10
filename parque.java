@@ -20,11 +20,5 @@ public class parque {
         Menu menu = new Menu(clientes, empleados, atracciones);
         menu.menuPrincipal();
     }
-
-    @Override
-    public String toString() {
-        return "parque{" + "clientes=" + clientes + ", empleados=" + empleados + ", atracciones=" + atracciones + '}';
-    }
-
     
 }
