@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * La Clase parque para iniciar el programa.
  *
- * @author (Juan Carlos Amor Gutierrez) modifican
+ * @author (Juan Carlos Amor Gutierrez) modificandolo ahora mismo
  * @version (1.0 5/5/19)
  */
 public class parque {
